@@ -51,10 +51,15 @@ export const profile = {
   robloxProfile: "https://www.roblox.com/users/0/profile", // [PLACEHOLDER]
   email: "you@example.com", // [PLACEHOLDER]
   socials: [
-    { label: "Discord", href: "https://discord.com/users/0" },
     { label: "Twitter / X", href: "https://x.com/yourhandle" },
     { label: "YouTube", href: "https://youtube.com/@yourhandle" },
   ] satisfies Social[],
+};
+
+/** Contact buttons. Edit the Gmail compose or Discord URL here. */
+export const contactLinks = {
+  gmailCompose: `https://mail.google.com/mail/?view=cm&fs=1&to=${profile.email}`,
+  discord: "https://discord.com/users/884014626956771361",
 };
 
 export const about = {

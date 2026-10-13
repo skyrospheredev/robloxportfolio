@@ -1,28 +1,22 @@
 import type { Metadata } from "next";
-import { ContactForm } from "@/components/ContactForm";
+import { ContactButtons } from "@/components/ContactButtons";
 import { SectionHeading } from "@/components/SectionHeading";
-import { pricing, profile } from "@/data/content";
+import { profile } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: `Get in touch with ${profile.name} about a Roblox project.`,
 };
 
-type Props = { searchParams: Promise<{ package?: string }> };
-
-export default async function ContactPage({ searchParams }: Props) {
-  const { package: packageId } = await searchParams;
-  const pkg = pricing.find((p) => p.id === packageId);
-  const defaultMessage = pkg ? `I’m interested in the ${pkg.name} package. ` : "";
-
+export default function ContactPage() {
   return (
     <section className="section">
       <div className="container two-col">
         <div>
           <SectionHeading level="h1" eyebrow="Contact" title="Let’s work together">
-            Tell me about your project and I’ll reply by email.
+            Tell me about your project and I’ll reply.
           </SectionHeading>
-          <ContactForm key={defaultMessage} defaultMessage={defaultMessage} />
+          <ContactButtons />
         </div>
         <div>
           <h2>Find me elsewhere</h2>

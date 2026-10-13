@@ -17,7 +17,7 @@ export function PricingCard({ pkg }: { pkg: PricingPackage }) {
           ))}
         </ul>
         <div className="card__actions">
-          <ButtonLink href={`/contact?package=${pkg.id}`} variant={pkg.featured ? "primary" : "secondary"}>
+          <ButtonLink href={"/contact"} variant={pkg.featured ? "primary" : "secondary"}>
             Get started<span className="sr-only"> with {pkg.name}</span>
           </ButtonLink>
         </div>
